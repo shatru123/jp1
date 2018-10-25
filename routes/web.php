@@ -44,3 +44,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/jobs', 'AdminJobsController@index');
 Route::get('admin/sectors', 'AdminSectorController@index');
 Route::get('admin/specialization', 'AdminSpecController@index');
+Route::resource('sector/delete', 'AdminSectorController');
+
+Route::resource('admin/add_sectors', 'AdminSectorController@create');

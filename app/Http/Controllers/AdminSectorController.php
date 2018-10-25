@@ -14,6 +14,12 @@ class AdminSectorController extends Controller
 
         return view('admin.sectors.index',compact('sectors'));
     }
+    public function create()
+    {
+
+
+        return view('admin.sectors.create');
+    }
 
 
     /**
@@ -26,12 +32,30 @@ class AdminSectorController extends Controller
 
             $sectors = Sector::findOrFail($id);
 
-
-
             $sectors->delete();
 
             return redirect('/admin/sectors');
 
         }
+
+        public function store(PostsCreateRequest $request)
+            {
+                //
+
+                $input = $request->all();
+
+                $sectors = Sector();
+
+                $sectors->create($input);
+
+
+                return redirect('/admin/sectors');
+
+            }
+
+
+
+
+
 
 }

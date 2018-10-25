@@ -22,12 +22,12 @@
                         <div class="card-body">
                             <h4 class="header-title">Sectors:</h4>
 
+
                             <table class="table">
                                 <thead>
                                 <tr>
                                     <th>Sector Name</th>
                                     <th colspan="2">Actions</th>
-
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -40,7 +40,7 @@
 
                                         <td>{{$sector->name}}</td>
                                          <td></td>
-                                         <td>{{$sector->name}}</td>
+                                         <td><a href=" {{url('admin/add_sectors')}}"> <i class="ti-ink-pen">Add New</i>  </a></td>
                                             <td>  {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminSectorController@destroy', $sector->id]]) !!}
 
                                                 <div class="form-group">
