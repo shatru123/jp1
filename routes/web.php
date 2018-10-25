@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('test', function () {
+    return view('admin.test');
+});
+
+Route::get('test1','test@test');
