@@ -20,36 +20,40 @@
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title">Jobs:</h4>
+                            <h4 class="header-title">Sectors:</h4>
 
                             <table class="table">
                                 <thead>
                                 <tr>
                                     <th>Sector Name</th>
+                                    <th colspan="2">Actions</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
 
-                                {{--@if($users)--}}
-                                    {{--@foreach($users as $user)--}}
+                                @if($sectors)
+                                    @foreach($sectors as $sector)
 
 
-                                        {{--<tr>--}}
-                                        {{--<td>{{$user->id}}</td>--}}
-                                        {{--<td> <img height="50" src="{{$user->photo ? $user->photo->file : 'http://placehold.it/400x400'}}" alt="" ></td>--}}
-                                        {{--<td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>--}}
-                                        {{--<td>{{$user->email}}</td>--}}
-                                        {{--<td>{{$user->role ? $user->role->name : 'User has no role'}}</td>--}}
-                                        {{--<td>{{$user->is_active == 1 ? 'Active' : 'Not Active' }}</td>--}}
-                                        {{--<td>{{$user->created_at->diffForHumans()}}</td>--}}
-                                        {{--<td>{{$user->updated_at->diffForHumans()}}</td>--}}
-                                        {{--</tr>--}}
+                                        <tr>
 
-                                    {{--@endforeach--}}
+                                        <td>{{$sector->name}}</td>
+                                         <td></td>
+                                         <td>{{$sector->name}}</td>
+                                            <td>  {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminSectorController@destroy', $sector->id]]) !!}
+
+                                                <div class="form-group">
+                                                    {!! Form::submit('Delete Sector', ['class'=>'btn btn-danger col-sm-8']) !!}
+                                                </div>
+
+                                                {!! Form::close() !!}</td>
+                                        </tr>
+
+                                    @endforeach
 
 
-                                {{--@endif--}}
+                                @endif
                                 </tbody>
                             </table>
 
