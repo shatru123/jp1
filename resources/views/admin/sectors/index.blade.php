@@ -21,8 +21,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="header-title">Sectors:</h4>
-
-
+                            <hr>
+                            <a href=" {{url('admin/add_sectors')}}" class="btn btn-primary col-sm-2"> <i class="ti-ink-pen  ">Add New</i>  </a>
+                            <hr>
                             <table class="table">
                                 <thead>
                                 <tr>
@@ -34,25 +35,21 @@
 
                                 @if($sectors)
                                     @foreach($sectors as $sector)
-
-
                                         <tr>
 
                                         <td>{{$sector->name}}</td>
-                                         <td></td>
-                                         <td><a href=" {{url('admin/add_sectors')}}"> <i class="ti-ink-pen">Add New</i>  </a></td>
+
+                                         <td><a href=" {{url('admin/update_sectors',$sector->id)}}" class="btn  "> <i class="ti-pencil-alt col-sm-6"></i>  </a></td>
                                             <td>  {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminSectorController@destroy', $sector->id]]) !!}
 
                                                 <div class="form-group">
-                                                    {!! Form::submit('Delete Sector', ['class'=>'btn btn-danger col-sm-8']) !!}
+                                                    {!! Form::submit('Delete Sector', ['class'=>' btn btn-danger col-sm-6']) !!}
                                                 </div>
 
                                                 {!! Form::close() !!}</td>
                                         </tr>
 
                                     @endforeach
-
-
                                 @endif
                                 </tbody>
                             </table>
@@ -64,7 +61,6 @@
 
             </div>
         </div>
-
     </div>
 
 @endsection

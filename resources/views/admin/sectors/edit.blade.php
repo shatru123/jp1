@@ -22,21 +22,28 @@
                         <div class="card-body">
                             <h4 class="header-title">Sectors:</h4>
 
-                              {!! Form::open(['method'=>'POST', 'action'=> 'AdminSectorController@store','files'=>true]) !!}
-
-
-                                    <div class="form-group">
-                                           {!! Form::label('name', 'Name:') !!}
-                                           {!! Form::text('name', null, ['class'=>'form-control'])!!}
-                                     </div>
-
-
+                          {{--//  @foreach($sectors as $sector)--}}
+                                  {!! Form::model($sectors, ['method'=>'PATCH', 'action'=> ['AdminSectorController@update', $sectors->id],'files'=>true]) !!}
 
                                        <div class="form-group">
-                                          {!! Form::submit('Create Sector', ['class'=>'btn btn-primary']) !!}
+                                           {!! Form::label('name', 'Name:') !!}
+                                           {!! Form::text('name', null, ['class'=>'form-control'])!!}
                                        </div>
 
-                                {!! Form::close() !!}
+                                       <div class="form-group">
+                                           {!! Form::submit('Update', ['class'=>'btn btn-primary col-sm-6']) !!}
+                                       </div>
+
+                                       {!! Form::close() !!}
+
+
+                                        {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminSectorController@destroy', $sectors->id]]) !!}
+
+                                            <div class="form-group">
+                                               {!! Form::submit('Delete ', ['class'=>'btn btn-danger col-sm-6']) !!}
+                                            </div>
+                             {!! Form::close() !!}
+                                {{--@endforeach--}}
 
 
                         </div>

@@ -46,4 +46,19 @@ Route::get('admin/sectors', 'AdminSectorController@index');
 Route::get('admin/specialization', 'AdminSpecController@index');
 Route::resource('sector/delete', 'AdminSectorController');
 
-Route::resource('admin/add_sectors', 'AdminSectorController@create');
+Route::get('admin/add_sectors', 'AdminSectorController@create');
+
+Route::get('admin/update_sectors/{id}', 'AdminSectorController@edit');
+
+//Route::resource('admin/sector', 'AdminSectorController');
+
+
+Route::group(['middleware'=>'admin'], function(){
+
+    Route::resource('admin/sector', 'AdminSectorController');
+
+    Route::resource('admin/specialization', 'AdminSpecController');
+
+});
+
+
