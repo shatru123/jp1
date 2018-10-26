@@ -41,7 +41,7 @@
 
                                         <tr>
 
-                                        <td><a href="{{url('admin.users.edit', $specialization->id)}}">{{$specialization->specialization_name}}</a></td>
+                                        <td><a href="{{url('admin/update_sectors',$specialization->id)}}">{{$specialization->specialization_name}}</a></td>
                                         <td>{{$specialization->sector_id ? $specialization->sector->name : 'No Sector'}}</td>
 
 
@@ -57,7 +57,6 @@
                                         </tr>
 
                                     @endforeach
-
 
                                 @endif
                                 </tbody>
