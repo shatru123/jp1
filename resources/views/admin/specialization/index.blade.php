@@ -17,10 +17,13 @@
         <div class="col-lg-6 col-ml-12">
             <div class="row">
                 <!-- Textual inputs start -->
-                <div class="col-12 mt-5">
+                <div class="col-12 mt-8">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title">Jobs:</h4>
+                            <h4 class="header-title">Specializations:</h4>
+                            <hr>
+                            <a href=" {{url('admin/add_spec')}}" class="btn btn-primary col-sm-2"> <i class="ti-ink-pen  ">Add New</i>  </a>
+                            <hr>
 
                             <table class="table">
                                 <thead>
@@ -41,17 +44,15 @@
 
                                         <tr>
 
-                                        <td><a href="{{url('admin/update_sectors',$specialization->id)}}">{{$specialization->specialization_name}}</a></td>
+                                        <td><a href="{{url('admin/update_spec',$specialization->id)}}">{{$specialization->specialization_name}}</a></td>
                                         <td>{{$specialization->sector_id ? $specialization->sector->name : 'No Sector'}}</td>
-
 
                                             <td>  {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminSpecController@destroy', $specialization->id]]) !!}
 
                                                 <div class="form-group">
                                                     {!! Form::submit('Delete Sector', ['class'=>' btn btn-danger col-sm-6']) !!}
                                                 </div>
-
-                                                {!! Form::close() !!}</td>
+                                          {!! Form::close() !!}</td>
 
 
                                         </tr>
@@ -73,3 +74,6 @@
     </div>
 
 @endsection
+
+
+

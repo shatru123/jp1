@@ -26,7 +26,7 @@ class CreateJobsTable extends Migration
             $table->string('location_type');
             $table->string('education');
             $table->string('language');
-            $table->tinyInteger('sector');
+            $table->tinyInteger('sector_id');
             $table->tinyInteger('specializations_id');
             $table->timestamps();
         });

@@ -50,7 +50,15 @@ Route::get('admin/add_sectors', 'AdminSectorController@create');
 
 Route::get('admin/update_sectors/{id}', 'AdminSectorController@edit');
 
-//Route::resource('admin/sector', 'AdminSectorController');
+Route::get('admin/add_spec', 'AdminSpecController@create');
+
+//Route::post('admin/add_spec', 'AdminSpecController@store');
+
+Route::get('admin/update_spec/{id}', 'AdminSpecController@edit');
+
+Route::get('admin/post_jobs', 'AdminJobsController@create');
+
+Route::get('admin/update_jobs/{id}', 'AdminJobsController@edit');
 
 
 Route::group(['middleware'=>'admin'], function(){
@@ -58,6 +66,8 @@ Route::group(['middleware'=>'admin'], function(){
     Route::resource('admin/sector', 'AdminSectorController');
 
     Route::resource('admin/specialization', 'AdminSpecController');
+
+    Route::resource('admin/jobs', 'AdminJobsController');
 
 });
 
