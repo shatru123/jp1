@@ -39,6 +39,11 @@ class AdminSpecController extends Controller
         public function store(Request $request)
             {
                 //
+                  
+                $request->validate([
+                    'specialization_name' => 'required',
+
+                ]);
 
                 $input = $request->all();
 
@@ -53,6 +58,7 @@ class AdminSpecController extends Controller
 
             public function edit($id)
             {
+
                 $sectors=Sector::pluck('name','id')->all();
                 $specializations = Specialization::findOrFail($id);
                 return view('admin.specialization.edit',compact('specializations','sectors'));
@@ -62,6 +68,10 @@ class AdminSpecController extends Controller
                public function update(Request $request, $id)
                 {
                     //
+                    $request->validate([
+                        'specialization_name' => 'required',
+    
+                    ]);
 
                     $input = $request->all();
 

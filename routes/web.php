@@ -33,6 +33,7 @@ Route::group(['middleware'=>'web'], function(){
     Route::resource('admin/jobs', 'AdminJobsController');
     Route::resource('admin/specialization', 'AdminSpecController');
     Route::resource('admin/sectors', 'AdminSectorController');
+    Route::resource('admin/employees', 'EmployeesController');
 
 });
 

@@ -36,7 +36,16 @@ class AdminJobsController extends Controller
     public function store(Request $request)
         {
             //
+            
+            $request->validate([
+                'title' => 'required',
+                'role_description' => 'required',
+                'country' => 'required',
+                'region' => 'required',
+                'experties' => 'required',
+                'education' => 'required',
 
+            ]);
             $input = $request->all();
 
 
@@ -51,7 +60,15 @@ class AdminJobsController extends Controller
        public function update(Request $request, $id)
         {
             //
+            $request->validate([
+                'title' => 'required',
+                'role_description' => 'required',
+                'country' => 'required',
+                'region' => 'required',
+                'experties' => 'required',
+                'education' => 'required',
 
+            ]);
             $input = $request->all();
 
             $jobs=new Job();

@@ -31,7 +31,7 @@
 
                     </li>
                     <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="ti-slice"></i><span>Employees</span></a>
+                        <a href="{{ url('admin/employees') }}" aria-expanded="true"><i class="ti-slice"></i><span>Employees</span></a>
 
                     </li>
 

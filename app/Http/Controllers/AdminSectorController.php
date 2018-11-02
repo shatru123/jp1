@@ -36,6 +36,10 @@ class AdminSectorController extends Controller
             {
                 //
 
+                $request->validate([
+                    'name' => 'required',
+
+                ]);
                 $input = $request->all();
 
                 $sectors = new Sector();
@@ -53,6 +57,10 @@ class AdminSectorController extends Controller
      */
     public function update(Request $request, $id)
                 {
+                    $request->validate([
+                        'name' => 'required',
+    
+                    ]);
 
                     $input = $request->all();
 
