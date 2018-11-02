@@ -19,13 +19,10 @@
         {!! Form::text('specialization_name', null, ['class'=>'form-control'])!!}
     </div>
 
-
     <div class="form-group">
         {!! Form::label('sector_id', 'Sector:') !!}
         {!! Form::select('sector_id', [''=>'Choose Options'] + $sectors , null, ['class'=>'form-control'])!!}
     </div>
-
-
 
     <div class="form-group">
         {!! Form::submit('Update Specialization', ['class'=>'btn btn-primary col-sm-6']) !!}
