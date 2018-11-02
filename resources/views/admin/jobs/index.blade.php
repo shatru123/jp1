@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <h4 class="header-title">Jobs:</h4>
                             <hr>
-                            <a href=" {{url('admin/post_jobs')}}" class="btn btn-primary col-sm-2"> <i class="ti-ink-pen  ">Add New</i>  </a>
+                            <a href=" {{route('jobs.create')}}" class="btn btn-primary col-sm-2"> <i class="ti-ink-pen  ">Add New</i>  </a>
                             <hr>
                             <table class="table">
                                    <thead>
@@ -42,7 +42,7 @@
 
                                        <tr>
 
-                                          <td><a href="{{url('admin/update_jobs', $job->id)}}">{{$job->title}}</a></td>
+                                          <td><a href="{{route('jobs.edit', $job->id)}}">{{$job->title}}</a></td>
                                           <td>{!! html_entity_decode($job->role_description) !!}</td>
                                           <td>{{ $job->sector->name}}</td>
                                            <td>{{$job->specializations->specialization_name }}</td>

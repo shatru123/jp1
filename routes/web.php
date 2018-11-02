@@ -24,51 +24,19 @@ Route::get('test1','test@test');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//
-//Route::group(['middleware'=>'admin'], function(){
-//
-//    Route::get('/admin', function(){
-//
-//        return view('admin.index');
-//
-//    });
-//
-//    Route::resource('admin/jobs', 'AdminJobsController');
-//    Route::resource('admin/sectors', 'AdminSectorController');
-//    Route::resource('admin/specializations', 'AdminSpecController');
-//    Route::resource('admin/employees', 'EmployeesController');
-////  Route::resource('admin/comment/replies', 'CommentRepliesController');
-//
-//});
-
-Route::get('admin/jobs', 'AdminJobsController@index');
-Route::get('admin/sectors', 'AdminSectorController@index');
-Route::get('admin/specialization', 'AdminSpecController@index');
-Route::resource('sector/delete', 'AdminSectorController');
-
-Route::get('admin/add_sectors', 'AdminSectorController@create');
-
-Route::get('admin/update_sectors/{id}', 'AdminSectorController@edit');
-
-Route::get('admin/add_spec', 'AdminSpecController@create');
-
-//Route::post('admin/add_spec', 'AdminSpecController@store');
-
-Route::get('admin/update_spec/{id}', 'AdminSpecController@edit');
-
-Route::get('admin/post_jobs', 'AdminJobsController@create');
-
-Route::get('admin/update_jobs/{id}', 'AdminJobsController@edit');
 
 
-Route::group(['middleware'=>'admin'], function(){
 
-    Route::resource('admin/sector', 'AdminSectorController');
 
-    Route::resource('admin/specialization', 'AdminSpecController');
 
+Route::group(['middleware'=>'web'], function(){
     Route::resource('admin/jobs', 'AdminJobsController');
+    Route::resource('admin/specialization', 'AdminSpecController');
+    Route::resource('admin/sectors', 'AdminSectorController');
 
 });
+
+
+
 
 

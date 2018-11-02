@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <h4 class="header-title">Sectors:</h4>
                             <hr>
-                            <a href=" {{url('admin/add_sectors')}}" class="btn btn-primary col-sm-2"> <i class="ti-ink-pen  ">Add New</i>  </a>
+                            <a href=" {{route('sectors.create')}}" class="btn btn-primary col-sm-2"> <i class="ti-ink-pen  ">Add New</i>  </a>
                             <hr>
                             <table class="table">
                                 <thead>
@@ -39,7 +39,7 @@
 
                                         <td>{{$sector->name}}</td>
 
-                                         <td><a href=" {{url('admin/update_sectors',$sector->id)}}" class="btn  "> <i class="ti-pencil-alt col-sm-6"></i>  </a></td>
+                                         <td><a href=" {{route('sectors.edit',$sector->id)}}" class="btn  "> <i class="ti-pencil-alt col-sm-6"></i>  </a></td>
                                             <td>  {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminSectorController@destroy', $sector->id]]) !!}
 
                                                 <div class="form-group">

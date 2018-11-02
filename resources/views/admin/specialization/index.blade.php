@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <h4 class="header-title">Specializations:</h4>
                             <hr>
-                            <a href=" {{url('admin/add_spec')}}" class="btn btn-primary col-sm-2"> <i class="ti-ink-pen  ">Add New</i>  </a>
+                            <a href=" {{route('specialization.create')}}" class="btn btn-primary col-sm-2"> <i class="ti-ink-pen  ">Add New</i>  </a>
                             <hr>
 
                             <table class="table">
@@ -44,7 +44,7 @@
 
                                         <tr>
 
-                                        <td><a href="{{url('admin/update_spec',$specialization->id)}}">{{$specialization->specialization_name}}</a></td>
+                                        <td><a href="{{route('specialization.edit',$specialization->id)}}">{{$specialization->specialization_name}}</a></td>
                                         <td>{{$specialization->sector_id ? $specialization->sector->name : 'No Sector'}}</td>
 
                                             <td>  {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminSpecController@destroy', $specialization->id]]) !!}
